@@ -63,10 +63,44 @@ with as a response:
 ![alt text](images/device_config.png)
 
 
-As for a NETCONF tool. we
+As for a NETCONF tool. we have to do a couple of things. we first have to install python2 onto our vm. 
+
+We can do this using these commands: 
+
+```
+sudo apt update
+sudo apt install python2
+```
+
+after that, we have to make sure that we export a certain variable so that the application can run smoothly: 
+
+```
+export PYTHONWARNINGS="ignore"
+```
+
+and finally, we have to install xmllint using these commands: 
+
+```
+sudo apt-get update 
+sudo apt-get install -y libxml2-utils
+```
+
+and now everything should be good for the `netconf-console`. but to use it we first have to clone the whole repository `https://github.com/OpenNetworkingFoundation/configuration.git` and change the `#!/usr/bin/python` to `#!/usr/bin/python2` since we are using python2. 
+
+now we can get the running config of our router using this command: 
+
+`./netconf-console.py --host=192.168.56.101 -u cisco -p cisco123! --port 830 --get-config`
+
+and this will give this output: 
+
+![alt text](images/netconf.png)
+
+this resposne is in XML, also known as structured data. and it is already put in pretty print so this is easier to read. 
+
+
 ## Troubleshooting
 
-There were no real problems in this case, it was pretty straight forward and worked pretty seemlesly
+the biggest issue was getting the NETCONF tool to work properly inside of the vm, installing the right packages and making sure everything ran simultaneously.
 
-## verification
+
 
