@@ -97,6 +97,17 @@ and this will give this output:
 
 this resposne is in XML, also known as structured data. and it is already put in pretty print so this is easier to read. 
 
+Structured data in XML for NETCONF is a hierarchical, machine-readable format used to represent network device configurations and operational states. It uses tags to encapsulate data, following schemas defined by YANG models, which ensure consistency and validation.
+
+Key Features:
+- Hierarchy: Data is organized in a tree-like structure (e.g., `<interfaces>` containing `<interface>` elements).
+- Self-Descriptive: Tags like `<name>` or `<status>`make data meaningful and readable.
+- Schema-Driven: YANG models define data structure, types, and constraints.
+= Use Cases:
+  - Retrieve data (`<get>` or `<get-config>`).
+  - Modify configurations (`<edit-config>`).
+  - Validate or lock data.
+
 
 ## Troubleshooting
 
