@@ -141,7 +141,7 @@ but to do this you have to change the namespaces in the templates since most of 
 
 ## Troubleshooting
 
-There were no real problems in this case, it was pretty straight forward and worked pretty seemlesly
+the biggest issue i was facing was getting the templates to work to make changes to the router, changing the namespaces and messing around with the templates eventually did the job. 
 
 ## verification
 
